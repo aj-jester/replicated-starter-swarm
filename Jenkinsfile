@@ -2,7 +2,9 @@ pipeline {
     agent any
 
     environment {
-         aj_slug = "testing app slug"
+	APP_VERSION = "0.5.0"
+	REPLICATED_APP = "testing app slug"
+	
     } 
 
     stages {
@@ -22,7 +24,7 @@ pipeline {
             }
             steps {
                 sh 'curl -fsSL https://github.com/replicatedhq/replicated/releases/download/v0.10.0/replicated_0.10.0_linux_amd64.tar.gz | tar xvz'
-		sh 'cat replicated.yaml | ./replicated release create --promote Unstable --yaml - --version "0.1.0" --release-notes "Automated CI release by AJ on Today"'
+		sh 'cat replicated.yaml | ./replicated release create --promote Unstable --yaml - --version "${env.APP_VERSION}" --release-notes "Automated CI release by ${env.USER} on build number ${env.BUILD_NUMBER}"'
             }
         }
     }
