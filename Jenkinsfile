@@ -1,11 +1,16 @@
 pipeline {
     agent any
 
+    environment {
+         aj_slug = "testing app slug"
+    } 
+
     stages {
 
         stage('Test') {
             steps {
                 sh 'echo "lgtm!"'
+		sh "printenv | sort"
             }
         }
 
