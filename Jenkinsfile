@@ -3,7 +3,7 @@ pipeline {
 
     environment {
 	APP_VERSION = "0.5.0"
-	REPLICATED_APP = "testing app slug"
+	REPLICATED_APP = "swarmcherryfields"
 	REPLICATED_API_TOKEN = "05e9c6fb226ff329ec91d2de26d72728453c9709f09cc5f3f2ec32262b2c7042"
     } 
 
