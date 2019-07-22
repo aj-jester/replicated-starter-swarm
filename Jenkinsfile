@@ -25,7 +25,7 @@ pipeline {
 
 
 
-		sh "cat replicated.yaml | ./replicated release create --promote Unstable --yaml - --version ${env.APP_VERSION} --release-notes \"Automated CI release for ${env.JOB_NAME} on build number ${env.BUILD_NUMBER}\" --app ${env.REPLICATED_APP} --token ${REPLICATED_API_TOKEN}"
+		sh "cat replicated.yaml | ./replicated release create --promote Unstable --yaml - --version ${env.APP_VERSION} --release-notes \"Automated CI release for ${env.JOB_NAME} on build number ${env.BUILD_NUMBER}\" --app ${env.REPLICATED_APP} --token ${env.REPLICATED_API_TOKEN}"
             }
         }
     }
