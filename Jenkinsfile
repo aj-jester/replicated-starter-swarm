@@ -17,7 +17,7 @@ pipeline {
             }
             steps {
                 sh 'curl -fsSL https://github.com/replicatedhq/replicated/releases/download/v0.10.0/replicated_0.10.0_linux_amd64.tar.gz | tar xvz'
-		sh 'cat replicated.yaml | ./replicated release create --promote Unstable --yaml - --version "${CI_COMMIT_SHA:0:7}" --release-notes "Automated CI release by $USER on $(date)"'
+		sh 'cat replicated.yaml | ./replicated release create --promote Unstable --yaml - --version "0.1.0" --release-notes "Automated CI release by AJ on Today"'
             }
         }
     }
